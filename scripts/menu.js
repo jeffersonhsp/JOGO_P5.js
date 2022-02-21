@@ -9,8 +9,6 @@ function drawMenu()
   if(menu == 2)creditos();
   if(menu == 3)instrucoes();
   if(menu == 4)background(255);
-  
-  console.log(nivel+"   "+mensagem);
 }
 
 
@@ -144,9 +142,16 @@ function drawMenu()
           if(key == 'Enter')mensagem ++;
           break;
         case 3:
-          if(key == '6')mensagem ++;
+          if(key == '6')mensagem = 6;
+          if(key == 'Enter')mensagem ++;
           break;
         case 4:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 5:
+          if(key == 'Enter')mensagem = 3;
+          break;
+        case 6:
           if(key == 'Enter'){nivel = 2; mensagem = 0;}
           break;
         default:

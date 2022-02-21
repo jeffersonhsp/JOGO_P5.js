@@ -8,7 +8,6 @@ function play(){
   let bloco
   let xo ;
   let yo ;
-  
   moveFlag = false;
   verificaOrientacao();
   movimenta();
@@ -156,30 +155,102 @@ function movimenta(){
 function printPerson(){
    imageMode(CENTER);
    translate(positionx%34 + (canvasx/2) , positiony%34 + (canvasy/2) -8 );
+   millisec2=millis();
   
    if(orientation == "left"){
-     bloco = 22;
+   if(bloco > 23 || bloco < 21)bloco = 22;
+     if(moveFlag){
+        if(atualmillisec2+200 < millisec2){
+          atualmillisec2=millisec2;
+          switch (bloco) {
+            case 22:
+              bloco=23;
+              break;
+            case 21:
+              bloco=23;
+              break;
+            case 23:
+              bloco=21;
+              break;
+            default:
+          }
+        }
+     }else bloco = 22;
      xo = parseInt((bloco % 12)) * 72;
      yo = parseInt((bloco / 12)) * 96;
-    image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
+     image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
    }
+  
    if(orientation == "right"){
-     bloco = 34;
+   if(bloco > 35 || bloco < 33)bloco = 34;
+     if(moveFlag){
+        if(atualmillisec2+200 < millisec2){
+          atualmillisec2=millisec2;
+          switch (bloco) {
+            case 34:
+              bloco=35;
+              break;
+            case 33:
+              bloco=35;
+              break;
+            case 35:
+              bloco=33;
+              break;
+            default:
+          }
+        }
+     }else bloco = 34;
      xo = parseInt((bloco % 12)) * 72;
      yo = parseInt((bloco / 12)) * 96;
-    image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
+     image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
    }
+
    if(orientation == "up"){
-     bloco = 46;
+   if(bloco > 47 || bloco < 45)bloco = 46;
+     if(moveFlag){
+        if(atualmillisec2+200 < millisec2){
+          atualmillisec2=millisec2;
+          switch (bloco) {
+            case 46:
+              bloco=47;
+              break;
+            case 47:
+              bloco=45;
+              break;
+            case 45:
+              bloco=47;
+              break;
+            default:
+          }
+        }
+     }else bloco = 46;
      xo = parseInt((bloco % 12)) * 72;
      yo = parseInt((bloco / 12)) * 96;
-    image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
+     image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
    }
+  
    if(orientation == "down"){
-     bloco = 10;
+   if(bloco > 11 || bloco < 9)bloco = 10;
+     if(moveFlag){
+        if(atualmillisec2+200 < millisec2){
+          atualmillisec2=millisec2;
+          switch (bloco) {
+            case 10:
+              bloco=11;
+              break;
+            case 11:
+              bloco=9;
+              break;
+            case 9:
+              bloco=11;
+              break;
+            default:
+          }
+        }
+     }else bloco = 10;
      xo = parseInt((bloco % 12)) * 72;
      yo = parseInt((bloco / 12)) * 96;
-    image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
+     image(person, 0, 0 , 45, 60, xo, yo, [72], [96]);
    }
   
 }
@@ -221,11 +292,31 @@ function nivel1(){
     textSize(18);
     fill(0)
     text('Digite o numero de rosas usando o teclado!' , 20, 30);
-    text('' , 20, 50);
-    text('' , 20, 70);
-    text('' , 20, 100);
+    text('as rosas estão no bosque seguindo na estrada de terra' , 20, 50);
+    text('se estiver com duvidas eu te explico melhor' , 20, 70);
+    text('Ou tecle enter para avancar                                                 ↵' , 20, 100);
   }
   if(mensagem ==4){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('A soma e a adção tem o mesmo significado ' , 20, 30);
+    text('a operaçao de adiçao é bem simples ' , 20, 50);
+    text('' , 20, 70);
+    text('Ou tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  if(mensagem ==5){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('Se voçê tem 2 maçãs e seu amigo tem 3 maçãs' , 20, 30);
+    text('a soma de maçãs de voçês dois é 5 maçãs' , 20, 50);
+    text('porque 3+2=5  como tambem  2+2=4         ' , 20, 70);
+    text('Ou tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  if(mensagem ==6){
     rect(0, 0, 500, 120, 20);
     strokeWeight(0.5)
     textSize(18);
@@ -360,8 +451,8 @@ function nivel3(){
   millisec=millis();
   textAlign(LEFT);
   translate(-250, 200);
-  stroke(0)
-  fill(255)
+  stroke(0);
+  fill(255);
 
 
 }

@@ -40,6 +40,8 @@ function variaveisGlobais(){
   
   window.millisec=0;
   window.atualmillisec=0;
+  window.millisec2=0;
+  window.atualmillisec2=0;
   
   window.img_jef=undefined;
   window.img_tig=undefined;
@@ -49,5 +51,6 @@ function variaveisGlobais(){
   window.esc=undefined;
   window.asset=undefined;
   window.person=undefined;
+  window.bloco=0;
   
 }
