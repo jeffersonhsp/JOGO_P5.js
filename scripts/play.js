@@ -2,7 +2,7 @@
 
 function play(){
 
-  nivel = 2;
+  //nivel = 2;
   scale(1);
   let positionxat, positionyat;
   let atualImg;
@@ -38,7 +38,15 @@ function play(){
         bloco = c2[atualImg]-1;
         xo = parseInt((bloco % 24)) * 34;
         yo = parseInt((bloco / 24)) * 34;
-        if(bloco>0)image(asset, (i-px)*34 - (grid*34-canvasx)/2 , (j-py)*34 - (grid*34-canvasy)/2, 34, 34, xo, yo, [34], [34]);
+        if(bloco>0 && bloco<800)image(asset,(i-px)*34-(grid*34-canvasx)/2,(j-py)*34-(grid*34-canvasy)/2,34,34,xo,yo,[34],[34]);
+        
+        if(bloco>=800){
+           bloco -= 800;
+           xo = parseInt((bloco % 12)) * 72;
+           yo = parseInt((bloco / 12)) * 96;
+           image(person, (i-px)*34-(grid*34-canvasx)/2,(j-py)*34-(grid*34-canvasy)/2-10, 45, 60, xo, yo, [72], [96]);
+        }
+        
       }
     }
     
@@ -231,19 +239,116 @@ function nivel1(){
 
 
 function nivel2(){
+  millisec=millis();
   textAlign(LEFT);
   translate(-250, 200);
   stroke(0)
   fill(255)
   
-    if(mensagem ==1){
+    if(c2[5544] == 0 && mensagem <8)c2[5544]=225;  //pedra
+    if(c2[5444] == 0 && mensagem <8)c2[5444]=814;   //pessoa
+    
+    
+    if(atualmillisec+900 < millisec){ 
+      atualmillisec=millisec;
+      switch (c2[5444]) {
+        case 814:
+          c2[5444]=826;
+          break;
+        case 826:
+          c2[5444]=814;
+          break;
+        default:
+      }
+    }
+  
+  
+  
+  if(mensagem ==1){
     rect(0, 0, 500, 120, 20);
     strokeWeight(0.5)
     textSize(18);
     fill(0)
-    text('' , 20, 30);
-    text('' , 20, 50);
+    text('Entao vamos lá' , 20, 30);
+    text('o professor Darlan está tentando voltar para casa ' , 20, 50);
+    text('e teve um pequeno incidente no caminho' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  if(mensagem ==2){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('Va até la seguindo pela estrada de terra ' , 20, 30);
+    text('é uma casa azul, a ultima casa  da estrada' , 20, 50);
     text('' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  
+  if(mensagem ==3){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('O professor vai presisar ligar para os bombeiros' , 20, 30);
+    text('e nao se recorda do ultimo algarismo  ' , 20, 50);
+    text('do numero do telefone' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  
+  if(mensagem ==4){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('mas ele sabe que é a diferença entre o numero ' , 20, 30);
+    text('de rosas amarelas e rosas azuis' , 20, 50);
+    text('' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  
+  if(mensagem == 5){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('Vá até o bosque novamente e faça este calculo' , 20, 30);
+    text('Darlan é professor de calculo se estiver ' , 20, 50);
+    text('duvida é so perguntar  que ele te ensina.' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  
+  if(mensagem == 6){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('-Darlan, meu jovem é bem simples, Entendemos que ' , 20, 30);
+    text('a subtração é a operação inversa da adição. Por exemplo, ' , 20, 50);
+    text('quando dizemos que o resultado de 7 – 3 = 4, queremos ' , 20, 70);
+    text('dizer que a diferença entre 7 e 3 é 4 e que 3+4=7.     ↵' , 20, 100);
+  }
+  
+  if(mensagem == 7){
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('Ele precisa da diferença entre as rosas amarelas ' , 20, 30);
+    text('e as rosas azuis' , 20, 50);
+    text('Informe a diferença usando o teclado...   ' , 20, 70);
+    text('Tecle enter para avancar                                                 ↵' , 20, 100);
+  }
+  if(mensagem == 8){
+    c2[5444]=0;
+    c2[5544]=0;
+    rect(0, 0, 500, 120, 20);
+    strokeWeight(0.5)
+    textSize(18);
+    fill(0)
+    text('Uaaau!, você é bem inteligente  ' , 20, 30);
+    text('o professor ja resolveu tudo e voltou para casa' , 20, 50);
+    text('vamos nos aventurar mais?  ' , 20, 70);
     text('Tecle enter para avancar                                                 ↵' , 20, 100);
   }
   
@@ -252,10 +357,15 @@ function nivel2(){
 
 
 
+function nivel2(){
+  millisec=millis();
+  textAlign(LEFT);
+  translate(-250, 200);
+  stroke(0)
+  fill(255)
 
 
-
-
+}
 
 
 

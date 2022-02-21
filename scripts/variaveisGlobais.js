@@ -7,7 +7,8 @@ function variaveisGlobais(){
   window.positiony = 1400 ;     //posiçao atual no mapa
   window.nivel = 1 ;           //nivel atual no jogo
   window.mensagem = 1;
-  
+  positionx-=200;
+  positiony+=400;
   
   
   window.rect_x = 320;
@@ -37,7 +38,8 @@ function variaveisGlobais(){
 
   window.stop = false;         //variavel de parada para testes
   
-  
+  window.millisec=0;
+  window.atualmillisec=0;
   
   window.img_jef=undefined;
   window.img_tig=undefined;

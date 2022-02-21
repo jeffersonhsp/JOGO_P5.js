@@ -128,6 +128,7 @@ function drawMenu()
       }
       if((menu == 2 || menu == 3 || menu == 1) && key == "Escape") menu = 5;
       console.log(key);
+  
     }
     
     
@@ -141,8 +142,35 @@ function drawMenu()
       if( mensagem ==1 && key == 'Enter')mensagem ++;
     }
     
-    if(menu == 1 && nivel==1){
-      if( mensagem ==4 && key == 'Enter')mensagem ++;
+    if(menu == 1 && nivel==2){
+      switch (mensagem) {
+        case 1:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 2:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 3:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 4:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 5:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 6:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 7:
+          if(key == 'Enter')mensagem = 5;
+          if(key == '2')mensagem = 8;
+          break;
+        case 8:
+          if(key == 'Enter'){nivel = 3; mensagem = 0;}
+          break;
+        default:
+      }
     }
     
     
