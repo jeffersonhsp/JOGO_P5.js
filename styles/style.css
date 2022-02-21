@@ -5,3 +5,7 @@ html, body {
 canvas {
   display: block;
 }
+
+div.a {
+  text-align: center;
+}
