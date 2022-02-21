@@ -2,7 +2,6 @@
 
 function play(){
 
-  //nivel = 2;
   scale(1);
   let positionxat, positionyat;
   let atualImg;
@@ -62,6 +61,7 @@ function play(){
   
    if(nivel == 1)nivel1();
    if(nivel == 2)nivel2();
+   if(nivel == 3)nivel3();
 }
 
 
@@ -240,14 +240,9 @@ function nivel1(){
 
 function nivel2(){
   millisec=millis();
-  textAlign(LEFT);
-  translate(-250, 200);
-  stroke(0)
-  fill(255)
   
-    if(c2[5544] == 0 && mensagem <8)c2[5544]=225;  //pedra
-    if(c2[5444] == 0 && mensagem <8)c2[5444]=814;   //pessoa
-    
+  if(c2[5544] == 0 && mensagem <8)c2[5544]=225;  //pedra
+  if(c2[5444] == 0 && mensagem <8)c2[5444]=814;  //pessoa
     
     if(atualmillisec+900 < millisec){ 
       atualmillisec=millisec;
@@ -262,6 +257,10 @@ function nivel2(){
       }
     }
   
+  textAlign(LEFT);
+  translate(-250, 200);
+  stroke(0)
+  fill(255)
   
   
   if(mensagem ==1){
@@ -357,7 +356,7 @@ function nivel2(){
 
 
 
-function nivel2(){
+function nivel3(){
   millisec=millis();
   textAlign(LEFT);
   translate(-250, 200);

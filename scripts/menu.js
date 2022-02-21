@@ -9,6 +9,8 @@ function drawMenu()
   if(menu == 2)creditos();
   if(menu == 3)instrucoes();
   if(menu == 4)background(255);
+  
+  console.log(nivel+"   "+mensagem);
 }
 
 
@@ -133,14 +135,24 @@ function drawMenu()
     
     
     
-    
-    
     if(menu == 1 && nivel==1){
-      if( mensagem ==4 && key == 'Enter'){nivel = 2; mensagem = 0;};
-      if( mensagem ==3 && key == '6')mensagem ++;
-      if( mensagem ==2 && key == 'Enter')mensagem ++;
-      if( mensagem ==1 && key == 'Enter')mensagem ++;
+      switch (mensagem) {
+        case 1:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 2:
+          if(key == 'Enter')mensagem ++;
+          break;
+        case 3:
+          if(key == '6')mensagem ++;
+          break;
+        case 4:
+          if(key == 'Enter'){nivel = 2; mensagem = 0;}
+          break;
+        default:
+      }
     }
+    
     
     if(menu == 1 && nivel==2){
       switch (mensagem) {
@@ -173,12 +185,9 @@ function drawMenu()
       }
     }
     
-    
-    
-    
     if(mensagem == 0)mensagem ++;
   }
-
+  
 
   function seletor_menu(){  
     fill(255, 204, 0);strokeWeight(3);textSize(35);
