@@ -1,13 +1,13 @@
 html, body {
   margin: 0;
   padding: 0;
-  align:center;
-  text-align: center;
 }
 canvas {
   display: block;
 }
 
-main {
-  text-align: center;
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
