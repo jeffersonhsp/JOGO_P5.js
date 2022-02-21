@@ -1,5 +1,5 @@
 function variaveisGlobais(){
-  
+
   
   window.canvasx=700;          //dimensoes do canvas
   window.canvasy=700;          //dimensoes do canvas
@@ -52,5 +52,7 @@ function variaveisGlobais(){
   window.asset=undefined;
   window.person=undefined;
   window.bloco=0;
+  
+  
   
 }
