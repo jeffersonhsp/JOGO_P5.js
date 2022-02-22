@@ -5,7 +5,7 @@ html, body {
 canvas {
   display: block;
 }
-body {
+.frame {
     display: flex;
     justify-content: center;
     flex-direction: row;
