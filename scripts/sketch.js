@@ -45,13 +45,15 @@ function setup() {
 }
 
 function draw() {
- if(mouseIsPressed === true){
+ if(mouseIsPressed === true && !flagRungame){
    if(mouseX>0 && mouseX < canvasx && mouseY > 0 && mouseY < canvasy){
      flagRungame = true; 
+     songMenu.play();
    }
  }
  if(flagPreload && flagRungame)drawMenu();
 }
+
 
 
 
