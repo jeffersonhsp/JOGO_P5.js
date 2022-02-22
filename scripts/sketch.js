@@ -48,7 +48,6 @@ function draw() {
  if(mouseIsPressed === true){
    if(mouseX>0 && mouseX < canvasx && mouseY > 0 && mouseY < canvasy){
      flagRungame = true; 
-     songMenu.play();
    }
  }
  if(flagPreload && flagRungame)drawMenu();
