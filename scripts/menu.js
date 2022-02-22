@@ -11,11 +11,10 @@ function drawMenu()
   if(menu == 4)background(255);
   
     if(menu == 1){
-      if(songMenu.isPlaying())songMenu.stop();
-      if(!songPlay.isPlaying())songPlay.play();
+      if(songMenu.isPlaying() && flagRungame)songMenu.stop();
+      if(!songPlay.isPlaying() && flagRungame)songPlay.play();
     }else {
-      if(songPlay.isPlaying())songPlay.stop();
-      if(!songMenu.isPlaying())songMenu.play();
+
     }
 }
 
