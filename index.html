@@ -14,15 +14,26 @@
         <script src="scripts/play.js"></script>
         <script src="scripts/variaveisGlobais.js"></script>
         
-        <button onclick="sendTecla()">UP</button>
+        <p>Click me too!</p>
     </body>
 </html>
 
 <script>
 function sendTecla(){  
-    var teclaCima = jQuery.Event("keypress");
+
+}
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+     var teclaCima = jQuery.Event("keypress");
     teclaCima.ctrlKey = false;
     teclaCima.which = 40; //Código da tecla - seta para cima
-    $("botao").trigger(teclaCima);
-}
+    $("botao").trigger(teclaCima);  
+  });
+});
 </script>
