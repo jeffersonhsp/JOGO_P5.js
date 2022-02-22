@@ -13,25 +13,17 @@
         <script src="scripts/play.js"></script>
         <script src="scripts/variaveisGlobais.js"></script>
         
-        <button onclick="sendTecla(40)">UP</button>
+        <button onclick="sendTecla()">UP</button>
     </body>
 </html>
 
 <script src="jquery.min.js"></script>
+
 <script>
-    
-var teclaEsquerda = jQuery.Event("keypress");
-teclaEsquerda.ctrlKey = false;
-teclaEsquerda.which = 37; //Código da tecla - seta esquerda
-$("botao").trigger(teclaEsquerda);
-    
-    
-    
-function sendTecla(t){  
-var teclaCima = jQuery.Event("keypress");
-teclaCima.ctrlKey = false;
-teclaCima.which = 40; //Código da tecla - seta para cima
-$("botao").trigger(teclaCima);
+function sendTecla(){  
+    var teclaCima = jQuery.Event("keypress");
+    teclaCima.ctrlKey = false;
+    teclaCima.which = 40; //Código da tecla - seta para cima
+    $("botao").trigger(teclaCima);
 }
-    
 </script>
