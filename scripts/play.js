@@ -257,10 +257,6 @@ function printPerson(){
 
 
 
-
-
-
-
 function nivel1(){
   textAlign(LEFT);
   translate(-250, 200);
@@ -441,7 +437,6 @@ function nivel2(){
     text('vamos nos aventurar mais?  ' , 20, 70);
     text('Tecle enter para avancar                                                 ↵' , 20, 100);
   }
-  
 }
 
 
@@ -453,8 +448,6 @@ function nivel3(){
   translate(-250, 200);
   stroke(0);
   fill(255);
-
-
 }
 
 

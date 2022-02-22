@@ -5,17 +5,12 @@
 function drawMenu()
 {
   if(menu == 5)telaDoMenu();
-  
   if(menu == 1 && !stop) play();
-
   if(menu == 2)creditos();
-  
   if(menu == 3)instrucoes();
-  
   if(menu == 4)background(255);
   
-  
-    if(menu == 1 ){
+    if(menu == 1){
       if(songMenu.isPlaying())songMenu.stop();
       if(!songPlay.isPlaying())songPlay.play();
     }else {
